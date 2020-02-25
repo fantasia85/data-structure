@@ -43,6 +43,6 @@ typedef struct {
 }SqList;
 ```
 
-
+* [linear_list_sequential_list](https://github.com/fantasia85/data-structure/tree/master/second_linear_list/linear_list_sequential_list) 
 
 
