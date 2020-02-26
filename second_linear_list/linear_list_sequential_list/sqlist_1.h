@@ -22,6 +22,7 @@ class sqList
     ~sqList() 
     { 
       free(elem); 
+      elem = NULL;
     } //析构函数，销毁线性表
 
     //sqList(sqList &sq1);
@@ -133,6 +134,7 @@ class sqList
       ListInsert(length, &T1);
     }
   }
+
 
 private:
   T *elem;
