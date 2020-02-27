@@ -57,3 +57,4 @@ typedef struct LNode {
 }LNode, *LinkList;
 ```
 * 单链表是非随机存取的存储结构。
+* [linear_list_link_list](https://github.com/fantasia85/data-structure/tree/master/second_linear_list/link_list)
