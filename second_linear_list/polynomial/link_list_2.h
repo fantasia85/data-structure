@@ -1,6 +1,6 @@
 
 //在原先link_list_1.h的基础上进行修改，删去直接得到元素值的操作，并改成有序链表
-//重新定义bool LocateElem_p (T e, LNode *&p);使其作用于有序链表
+//重新定义bool LocateElem_p2 (T e, LNode *&p);使其作用于有序链表
 //定义void ListDelete(LNode *p);
 #ifndef _LINK_LIST_2_H
 #define _LINK_LIST_2_H
@@ -73,7 +73,7 @@ public:
         p->data = e;
     } //用e更新p所指结点中数据元素的值
 
-    T& GetCurElem(LNode *p)
+    T GetCurElem(LNode *p)
     {
         return p->data;
     } //返回p所指结点中数据元素的值
@@ -96,7 +96,7 @@ public:
 
     bool LocatePos(int i, LNode *&p); //返回p，指示链表中第i个结点的位置。i不合法时返回false
 
-    bool LocateElem_p(T e, LNode *&p); //在线性表中找出与e相等关系的数据元素的位置，用p返回第一个元素的位置（地址），并返回true。
+    bool LocateElem_p2(T e, LNode *&p); //在线性表中找出与e相等关系的数据元素的位置，用p返回第一个元素的位置（地址），并返回true。
                                        //不存在时返回应该插入位置的下一个元素的位置，并返回false。应插入末尾时返回NULL
 
     void ListDelete(LNode *&p); //p存在，删除p结点，并修改指针p指向被删除之后的下一个位置
@@ -247,7 +247,7 @@ typename link_list<T>::LNode *link_list<T>::GetLast()
 template <class T>
 typename link_list<T>::LNode *link_list<T>::PriorPos(LNode *p)
 {
-    if (p == head)
+    if (p == head) //
         return NULL;
     LNode *temp = head;
     while (temp->next != p)
@@ -272,7 +272,7 @@ bool link_list<T>::LocatePos(int i, LNode *&p)
 }
 
 template <class T>
-bool link_list<T>::LocateElem_p(T e, LNode *&p)
+bool link_list<T>::LocateElem_p2(T e, LNode *&p)
 {
     LNode *temp = head->next;
     while (temp)
@@ -289,6 +289,7 @@ bool link_list<T>::LocateElem_p(T e, LNode *&p)
         }
         temp = temp->next;
     }
+    p = NULL;
     return false;
 }
 

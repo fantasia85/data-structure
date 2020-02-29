@@ -86,3 +86,5 @@ typedef struct DuLNode
   struct DuLNode *next;
 }DuLNode, *DuLinkList;
 ```
+* [polynomial](https://github.com/fantasia85/data-structure/tree/master/second_linear_list/polynomial
+)
