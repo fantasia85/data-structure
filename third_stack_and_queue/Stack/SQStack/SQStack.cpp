@@ -27,6 +27,10 @@ int main ()
     std::cout << S1.StackEmpty() << " " << S1.StackLength() << std::endl;
     std::cout << std::endl;
 
+    S1.ClearStack();
+    std::cout << S1.StackEmpty() << " " << S1.StackLength() << std::endl;
+    std::cout << std::endl;
+
     for (int i = 0; i < 10; i++)
         S2.Push(i);
     std::cout << S2.StackEmpty() << " " << S2.StackLength() << std::endl;
@@ -41,6 +45,10 @@ int main ()
             std::cout << "false";
     }
     std::cout << std::endl;
+    std::cout << S2.StackEmpty() << " " << S2.StackLength() << std::endl;
+    std::cout << std::endl;
+
+    S2.ClearStack();
     std::cout << S2.StackEmpty() << " " << S2.StackLength() << std::endl;
     std::cout << std::endl;
 
@@ -64,6 +72,10 @@ int main ()
             std::cout << "false";
     }
     std::cout << std::endl;
+    std::cout << Sc.StackEmpty() << " " << Sc.StackLength() << std::endl;
+    std::cout << std::endl;
+
+    Sc.ClearStack();
     std::cout << Sc.StackEmpty() << " " << Sc.StackLength() << std::endl;
     std::cout << std::endl;
 
