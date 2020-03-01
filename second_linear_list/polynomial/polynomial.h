@@ -206,10 +206,11 @@ void polynomial::AddPolyn(polynomial &p1)
         }
         else if (p1.GetCurElem_P(q1) < GetCurElem_P(q))
         {
-            LNode *temp = p1.NextPos_P(q1); //先记录下q1的下一位置
-            InsBefore_P(q, q1);
+            LNode *temp; 
+            MakeNode_P(p1.GetCurElem_P(q1), temp);
+            InsBefore_P(q, temp);
             q = NextPos_P (q);
-            q1 = temp;
+            p1.ListDelete_P(q1);
         }
         else 
         {
@@ -245,12 +246,12 @@ void polynomial::SubtractPolyn(polynomial &p1)
         }
         else if (p1.GetCurElem_P(q1) < GetCurElem_P(q))
         {
-            LNode *temp = p1.NextPos_P(q1); //先记录下q1的下一位置
-            InsBefore_P(q, q1);
-            T tmp1(0.0, GetCurElem_P(q).expn);
-            SetCurElem_P(q, Minus_Elem(tmp1, GetCurElem_P(q))); //设为负值，应该有更好的方法
+            LNode *temp;
+            T tmp1(0.0, p1.GetCurElem_P(q1).expn);
+            MakeNode_P(Minus_Elem(tmp1, p1.GetCurElem_P(q1)), temp); //设为负值，应该有更好的方法
+            InsBefore_P(q, temp);
             q = NextPos_P(q);
-            q1 = temp;
+            p1.ListDelete_P(q1);
         }
         else
         {
