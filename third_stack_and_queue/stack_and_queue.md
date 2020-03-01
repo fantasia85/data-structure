@@ -24,3 +24,7 @@ ADT Stack
 ```
 * 栈的两种形式：顺序栈和链栈
   * [顺序栈SQStack](https://github.com/fantasia85/data-structure/tree/master/third_stack_and_queue/Stack/SQStack)
+  
+  * [链栈LLStack](https://github.com/fantasia85/data-structure/tree/master/third_stack_and_queue/Stack/LLStack)
+  
+    
