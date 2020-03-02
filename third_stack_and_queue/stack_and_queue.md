@@ -27,4 +27,6 @@ ADT Stack
   
   * [链栈LLStack](https://github.com/fantasia85/data-structure/tree/master/third_stack_and_queue/Stack/LLStack)
   
-    
+* 栈的应用举例
+  * [数制转换&括号匹配的检验&行编辑程序]()
+  * [Leetcode_Valid_parentheses](https://leetcode.com/problems/valid-parentheses/)
