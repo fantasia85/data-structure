@@ -34,16 +34,16 @@ ADT Stack
   
   * 迷宫求解（暂无）
   
-  * [表达式求值](https://github.com/fantasia85/data-structure/tree/master/third_stack_and_queue/Stack/A_Evaluate_Expression)
+  * [表达式求值](https://github.com/fantasia85/data-structure/blob/master/third_stack_and_queue/Stack/A_Evaluate_Expression/Evaluate_Expression.cpp)
 
 * 栈与递归的实现
-  * 2阶斐波那契数列（Fibonacci）
+  * [2阶斐波那契数列（Fibonacci）](https://github.com/fantasia85/data-structure/blob/master/third_stack_and_queue/Stack/Stack_and_recursion/Fibonacci_and_hanoi.cpp)
   ```
   FIb(n) = 0 若n = 0
            1 若n = 1
            Fib(n-1) + Fib(n-2)
   ```
-  * n阶汉诺塔（Hanoi）
+  * [n阶汉诺塔（Hanoi）](https://github.com/fantasia85/data-structure/blob/master/third_stack_and_queue/Stack/Stack_and_recursion/Fibonacci_and_hanoi.cpp)
   ```c++
   void hanoi (int n, char x, char y, char z)
   {
