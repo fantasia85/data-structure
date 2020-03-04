@@ -29,4 +29,11 @@ ADT Stack
   
 * 栈的应用举例
   * [数制转换&括号匹配的检验&行编辑程序](https://github.com/fantasia85/data-structure/tree/master/third_stack_and_queue/Stack/Application)
+  
   * [Leetcode_Valid_parentheses](https://leetcode.com/problems/valid-parentheses/)
+  
+  * 迷宫求解（暂无）
+  
+  * [表达式求值](https://github.com/fantasia85/data-structure/tree/master/third_stack_and_queue/Stack/A_Evaluate_Expression)
+  
+    
