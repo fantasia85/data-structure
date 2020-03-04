@@ -1,5 +1,5 @@
 # Data Structure
-《数据结构（C语言版）》 清华大学出版社
+《数据结构（C语言版）》 清华大学出版社  **个人学习记录**
 
 [1. Introduction](https://github.com/fantasia85/data-structure/blob/master/first_introduction/introduction.md)
 
