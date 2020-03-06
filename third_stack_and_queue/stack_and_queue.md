@@ -57,4 +57,33 @@ ADT Stack
   	}
   }
   ```
+
+#### Queue
+***
+* 和栈相反，**队列（queue）** 是一种**先进先出（first in first out，缩写为FIFO）** 的线性表。它只允许在表的一端进行插入操作，而在另一端删除元素。
+
+* 在队列中，允许插入的一端叫做**队尾（rear）** ，允许删除的一端则称为**队头（front）** 。
+
+  ```
+  ADT Queue
+  {
+  	数据对象：
+  	数据关系：
+  	基本操作：
+  		InitQueue(&Q)
+  		DestroyQueue(&Q)
+  		ClearQueue(&Q)
+  		QueueEmpty(Q)
+  		QueueLength(Q)
+  		GetHead(Q,&e)
+  		EnQueue(&Q,e)
+  		DeQueue(&Q,&e)
+  		QueueTraverse(Q,visit())
+  }ADT Queue
+  ```
+  
+* 除了栈和队列之外，还有一种限定性数据结构是**双端队列（deque）** 。
+
+* 用链表表示的队列简称为**链队列** 。
+
   

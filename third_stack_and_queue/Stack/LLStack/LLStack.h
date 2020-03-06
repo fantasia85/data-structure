@@ -51,6 +51,7 @@ public:
         {
             LNode *temp = top();
             ls.Remove(temp);
+            ls.FreeNode(temp);
             return true;
         }
         return false;
