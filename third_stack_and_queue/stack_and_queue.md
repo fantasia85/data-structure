@@ -84,6 +84,6 @@ ADT Stack
   
 * 除了栈和队列之外，还有一种限定性数据结构是**双端队列（deque）** 。
 
-* 用链表表示的队列简称为**链队列** 。
+* 用链表表示的队列简称为[链队列](https://github.com/fantasia85/data-structure/tree/master/third_stack_and_queue/Queue/LLQueue)。
 
   
