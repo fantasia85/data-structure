@@ -31,7 +31,7 @@ int main()
 
     //char型
     LLStack<char> Lc;
-    std::cout << L1.StackEmpty() << " " << L1.StackLength() << std::endl;
+    std::cout << Lc.StackEmpty() << " " << Lc.StackLength() << std::endl;
     std::cout << std::endl;
 
     for (char i = 'a'; i <= 'z'; i++)
