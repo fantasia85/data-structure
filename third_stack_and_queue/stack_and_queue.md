@@ -86,4 +86,10 @@ ADT Stack
 
 * 用链表表示的队列简称为[链队列](https://github.com/fantasia85/data-structure/tree/master/third_stack_and_queue/Queue/LLQueue)。
 
+* 将顺序队列臆造为一个环状的空间，称为**循环队列** 。
+
+  * 只凭等式Q.front = Q.rear无法判断队列空间是“空”还是“满”。可有两种处理方法：其一是另设一个标志位以区别队列是“空“还是”满“；其二是少用一个元素空间，约定以“队列头指针在队列尾指针的下一位置（指环状的下一位置）上”作为队列呈“满”状态的标志。
+  
+    
+  
   
