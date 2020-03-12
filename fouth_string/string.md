@@ -43,7 +43,7 @@ ADT String
   typedef  unsigned char SString[MAXSTRLEN + 1]
   ```
 
-  * 堆分配存储表示
+  * [堆分配存储表示](https://github.com/fantasia85/data-structure/tree/master/fouth_string/string)
 
     这种存储表示的特点是，仍以一组地址连续的存储单元存放串值字符序列，但它们的存储空间是在程序执行过程中动态分配而得。
 
