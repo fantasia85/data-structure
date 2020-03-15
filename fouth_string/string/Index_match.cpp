@@ -6,6 +6,7 @@ int Index (std::string &s1, std::string &s2, int pos);  //简单的模式匹配
 
 int Index_KMP (std::string &s1, std::string &s2, int pos, std::vector<int> &next); //KMP算法模式匹配
 
+//实际测试还存在部分问题
 void get_next (std::string &s2, std::vector<int> &next);
 
 void get_nextval (std::string &s2, std::vector<int> &next); //改进的get_next函数
