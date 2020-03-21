@@ -127,7 +127,7 @@ ADT BinaryTree
   }BiTNode, *BiTree
   ```
 
-* **遍历二叉树**
+* [**遍历二叉树**](https://github.com/fantasia85/data-structure/blob/master/fifth_tree/Binary%20Tree/traversing.cpp)
 
   * 先序遍历二叉树的操作定义为：
 
