@@ -153,4 +153,83 @@ ADT BinaryTree
     2. 后序遍历右子树；
     3.  访问根节点。
 
-* 
+* 不论按哪一种次序进行遍历，对含*n*个结点的二叉树，其时间复杂度为*O(n)*。所需辅助空间为遍历过程中栈的最大容量，即树的深度，最坏情况下为*n*，则空间复杂度也为*O(n)*。
+
+* 线索二叉树
+
+  * 试做如下规定：若结点有左子树，则其lchild域指示其左孩子，否则令lchild域指示其前驱；若结点有右子树，则其rchild域指示其右孩子，否则令rchild域指示其后继。
+  * 以这种结点结构构成的二叉链表作为二叉树的存储结构，叫做**线索链表**，其中指向结点前驱和后继的指针，叫做**线索**。加上线索的二叉树称之为**线索二叉树（Threaded Binary Tree）**。对二叉树以某种次序遍历使其变为线索二叉树的过程叫做**线索化**。
+  * 在中序线索树中找结点后继的规律是：若其右标志为“1”，则右链为线索，指示其后继，否则遍历右子树时访问的第一个结点（右子树中最左下的结点）为其后继。
+  * 在中序线索树中找结点前驱的规律是：若其左标志为“1”，则左链为线索，指示其前驱，否则遍历左子树时最后访问的一个结点（左子树中最右下的结点）为其前驱。
+
+  ```
+  //二叉树的二叉线索存储表示
+  typedef enum PointerTag { Link, Thread }; //Link == 0:指针，Thread == 1:线索
+  typedef struct BiThrNode 
+  {
+  	TElemType data;
+  	struct BiThrNode *lchild, *rchild; //左右孩子指针
+  	PointerTag LTag, TRTag; //左右标志
+  }BiThrNode, *BiThrTree;
+  ```
+
+#### **树和森林**
+
+***
+
+* 树的存储结构
+
+  1. 双亲表示法：以一组连续空间存储树的结点，同时在每个结点中附设一个指示器指示其双亲结点在链表中的位置。
+
+  ```
+  //树的双亲表存储表示
+  #define MAX_TREE_SIZE 100
+  typedef struct PTNode //结点结构
+  {
+  	TElemType data;
+  	int parent; //双亲位置域
+  }PTNode;
+  typedef struct //树结构
+  {
+  	PTNode nodes[MAX_TREE_SIZE]；
+  	int r,n; //根的位置和结点树
+  }PTree;
+  ```
+
+  2. 孩子表示法：把每个结点的孩子结点排列起来，看成是一个线性表，且以单链表作为存储结构，则n个结点有n个孩子链表（叶子的孩子链表为空表）。而n个头指针又组成一个线性表，为了便于查找，可采用顺序存储结构。
+
+  ```
+  //树的孩子链表存储表示
+  typedef struct CTNode //孩子结点
+  {
+  	int child;
+  	struct CTNode *next;
+  } *ChildPtr;
+  typedef struct
+  {
+  	TElemType data;
+  	ChildPtr firstchild; //孩子链表头指针
+  }CTBox;
+  typedef struct
+  {
+  	CTBox nodes[MAX_TREE_SIZE];
+  	int n,r; //结点数和根的位置
+  }CTree;
+  ```
+
+  3. 孩子兄弟表示法：又称二叉树表示法， 或二叉链表表示法。即以二叉链表作为树的存储结构。链表中结点的两个链域分别指示该结点的第一个孩子结点和下一个兄弟结点，分别命名为firstchild域和nextsibling域。
+
+  ```
+  //树的二叉链表（孩子-兄弟）存储表示
+  typedef struct CSNode
+  {
+  	ElemType data;
+  	struct CSNode *firstchild, *nextsibling;
+  }CSNode, *CSTree;
+  ```
+
+* 森林与二叉树的转换：从树的二叉链表表示的定义可知，任何一棵和树对应的二叉树，其右子树必空。若把森林中第二棵树的根节点看成是第一棵树的根节点的兄弟，则同样可以导出森林和二叉树的对应关系。
+
+* 有树结构的定义可以引出两种次数遍历树的方法：一种是先根（次序）遍历树，即先访问树的根结点，然后依次先根遍历根的每棵子树；另一种是后根（次序）遍历，即先依次后根遍历每棵子树，然后访问根结点。
+
+* 森林的两种遍历方法：先序遍历森林和中序遍历森林。森林的先序和中序遍历即为其对应的二叉树的先序和中序遍历。
