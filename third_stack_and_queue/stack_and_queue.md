@@ -7,7 +7,7 @@
 * **栈（stack）** 是限定仅在表尾进行插入或删除操作的线性表。因此，对栈来说，表尾端有其特殊含义，称为**栈顶（top）** ，相应地，表头端称为**栈底（bottom）** 。不含元素的空表称为空栈。
 * 栈又称为**后进先出（last in first out）** 的线性表（简称**LIFO** 结构）。
 * 称插入元素的操作为入栈，删除栈顶元素的操作为出栈。
-```
+```c++
 ADT Stack
 {
   基本操作：
@@ -38,7 +38,7 @@ ADT Stack
 
 * 栈与递归的实现
   * [2阶斐波那契数列（Fibonacci）](https://github.com/fantasia85/data-structure/blob/master/third_stack_and_queue/Stack/Stack_and_recursion/Fibonacci_and_hanoi.cpp)
-  ```
+  ```c++
   FIb(n) = 0 若n = 0
            1 若n = 1
            Fib(n-1) + Fib(n-2)
@@ -64,7 +64,7 @@ ADT Stack
 
 * 在队列中，允许插入的一端叫做**队尾（rear）** ，允许删除的一端则称为**队头（front）** 。
 
-  ```
+  ```c++
   ADT Queue
   {
   	数据对象：
