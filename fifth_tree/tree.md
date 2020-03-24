@@ -271,5 +271,5 @@ typedef char **HuffmanCode; //动态分配数组存储赫夫曼编码表
 ***
 
 * 回溯法也是设计递归过程的一种重要方法，它的求解过程实际上是一个先序遍历一棵“状态树”的过程，只是这棵树不是遍历前预先建立的，而是隐含在遍历过程中。
-* 求n个元素的集合的幂集
-* 4(8)皇后问题
+* [求n个元素的集合的幂集](https://github.com/fantasia85/data-structure/blob/master/fifth_tree/Backtracking/powerset.cpp)
+* [4(8)皇后问题](https://github.com/fantasia85/data-structure/blob/master/fifth_tree/Backtracking/queen_4.cpp)
