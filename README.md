@@ -10,3 +10,5 @@
 [4. String](https://github.com/fantasia85/data-structure/blob/master/fouth_string/string.md)
 
 [5. Tree](https://github.com/fantasia85/data-structure/blob/master/fifth_tree/tree.md)
+
+[6. Graph](https://github.com/fantasia85/data-structure/blob/master/sixth_graph/graph.md)
