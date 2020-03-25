@@ -57,7 +57,7 @@ ADT Graph
 
 * 常用的存储结构有邻接表、邻接多重表和十字链表。
 
-* 1. 数组表示法：用两个数组分别存储数据元素（顶点）的信息和数据元素之间的关系（边或弧）的信息。
+* 1. [数组表示法](https://github.com/fantasia85/data-structure/blob/master/sixth_graph/graph/adjmatrix.cpp)：用两个数组分别存储数据元素（顶点）的信息和数据元素之间的关系（边或弧）的信息。
 
   ```C++
   //图的数组（邻接矩阵）存储表示
