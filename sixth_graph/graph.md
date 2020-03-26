@@ -108,7 +108,7 @@ ADT Graph
 
   * 在无向图的邻接表中，顶点vi的度恰为第i个链表中的结点数；而在有向图中，第i个链表中的结点个数只是顶点vi的出度，为求入度，必须遍历整个邻接表。
 
-* 3. 十字链表（Orthogonal List）是有向图的另一种链式存储结构。可以看成是将有向图邻接表和逆邻接表结合起来得到的一种链表。
+* 3. [十字链表（Orthogonal List）](https://github.com/fantasia85/data-structure/blob/master/sixth_graph/graph/orthogonal_list.cpp)是有向图的另一种链式存储结构。可以看成是将有向图邻接表和逆邻接表结合起来得到的一种链表。
 
   * 在弧结点中有5个域：其中尾域（tailvex）和头域（headvex）分别指示弧尾和弧头这两个顶点在图中的位置，链域hlink指示弧头相同的下一条弧，而链域tlink指示弧尾相同的下一条弧，info域指向该弧的相关信息。
   * 弧头相同的弧在同一链表上，弧尾相同的弧也在同一链表上。
