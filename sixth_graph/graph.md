@@ -79,4 +79,89 @@ ADT Graph
   }MGraph;
   ```
 
+* 2. 邻接表（Adjacency List）：是图的一种链式存储结构。在邻接表中，对图中每个顶点建立一个单链表，第i个单链表中的结点表示依附于顶点vi的边（对有向图是以顶点vi为尾的弧）。
+
+  * 每个结点由3个域组成，其中邻接点域（adjvex）指示与顶点vi邻接的点在图中的位置，链域（nextarc）指示下一条边或弧的结点；数据域（info）存储和边或弧相关的信息，如权值等。
+  * 每个链表上附设一个表头结点。
+
+  ```C++
+  //图的邻接表存储表示
+  #define MAX_VERTEX_NUM 20
+  typedef struct ArcNode
+  {
+      int adjvex; //该弧所指示的顶点的位置
+      struct ArcNode *nextarc; //指示下一条弧的指针
+      InfoType *info; //该弧相关信息的指针
+  }ArcNode;
+  typedef strucct VNode
+  {
+      VertexType data; //顶点信息
+      ArcNode *firstarc; //指示第一条依附该顶点的弧的指针
+  }VNode, AdjList[MAX_VERTEX_NUM];
+  typedef struct
+  {
+      AdjList vertices; 
+      int vexnum, arcnum; //图的当前顶点数和弧数
+      int kind; //图的种类标志
+  }ALGraph;
+  ```
+
+  * 在无向图的邻接表中，顶点vi的度恰为第i个链表中的结点数；而在有向图中，第i个链表中的结点个数只是顶点vi的出度，为求入度，必须遍历整个邻接表。
+
+* 3. 十字链表（Orthogonal List）是有向图的另一种链式存储结构。可以看成是将有向图邻接表和逆邻接表结合起来得到的一种链表。
+
+  * 在弧结点中有5个域：其中尾域（tailvex）和头域（headvex）分别指示弧尾和弧头这两个顶点在图中的位置，链域hlink指示弧头相同的下一条弧，而链域tlink指示弧尾相同的下一条弧，info域指向该弧的相关信息。
+  * 弧头相同的弧在同一链表上，弧尾相同的弧也在同一链表上。
+  * 它们的头结点即为顶点结点，它由3个域组成：其中data域存储和顶点相关的信息，如顶点的名称等，firstin和firstout为两个链域，分别指向以该顶点为弧头或弧尾的第一个弧结点。
+
+  ```C++
+  //有向图的十字链表存储表示
+  #define MAX_VERTEX_NUM 20
+  typedef struct ArcBox
+  {
+      int tailvex, headvex; //该弧的尾和头顶点的位置
+      struct ArcBox *hlink, *tlink; //分别为弧头相同和弧尾相同的弧的链域
+      InfoType *info; //该弧相关信息的指针
+  }ArcBox;
+  typedef struct VexNode
+  {
+      VertexType data;
+      ArcBox *firstin, *firstout; //分别指向该顶点第一条入弧和出弧
+  }VexNode;
+  typedef struct
+  {
+      VexNode xlist[MAX_VERTEX_NUM]; //表头向量
+      int vexnum, arcnum; //有向图的当前顶点数和弧数
+  }OLGraph;
+  ```
+
+* 4. 邻接多重表（Adjacency Multilist）是无向图的另一种链式存储结构。
+
+  * 邻接多重表的结构和十字链表类似。
+  * 在邻接多重表中，每一条边用一个结点表示，它由6个域组成：mark为标志域，可用以标记该条边是否被搜索过；ivex和jvex为该边依附的两个顶点在图中的位置；ilink指向下一条依附于顶点ivex的边；jlink指向下一条依附于顶点jvex的边，info为指向和边相关的各种信息的指针域。
+  * 每一个顶点也用一个结点表示，它由2个域组成：data域存储和该顶点相关的信息，firstedge域指示第一条依附于该顶点的边。
+
+  ```c++
+  //无向图的邻接多重表存储表示
+  #define MAX_VERTEX_NUM 20
+  typedef enum {unvisited, visited} VisitIf;
+  typedef struct EBox
+  {
+      VisitIf mark; //访问标记
+      int ivex, jvex; //该边依附的两个顶点的位置
+      struct EBox *ilink, *jlink; //分别指向依附这两个顶点的下一条边
+      InfoType *info; //该边信息指针
+  }EBox;
+  typedef struct VexBox
+  {
+      VertexType data;
+      EBox *firstedge; //指向第一条依附该顶点的边
+  }VexBox;
+  typedef struct
+  {
+      VexBox adjmulist[MAX_VERTEX_NUM];
+      int vexnum, edgenum; //无向图的当前顶点数和边数
+  }AMLGraph;
+  ```
+
   
