@@ -12,3 +12,5 @@
 [5. Tree](https://github.com/fantasia85/data-structure/blob/master/fifth_tree/tree.md)
 
 [6. Graph](https://github.com/fantasia85/data-structure/blob/master/sixth_graph/graph.md)
+
+[7. Search](https://github.com/fantasia85/data-structure/blob/master/seventh_search/search.md)

@@ -56,7 +56,7 @@ ADT StaticSearchTable
 }ADT StaticSearchTable
 ```
 
-* **顺序查找**（Sequential Search）的查找过程为：从表中最后一个记录开始，逐个进行记录的关键字和给定值的比较，若某个记录的关键字和给定值比较相等，则查找成功，找到所查记录；反之，若直至第一个记录，其关键字和给定值比较都不等，则表明表中没有所查记录，查找不成功。
+* [**顺序查找**](https://github.com/fantasia85/data-structure/blob/master/seventh_search/search/StaticSearchTable/search_seq.cpp)（Sequential Search）的查找过程为：从表中最后一个记录开始，逐个进行记录的关键字和给定值的比较，若某个记录的关键字和给定值比较相等，则查找成功，找到所查记录；反之，若直至第一个记录，其关键字和给定值比较都不等，则表明表中没有所查记录，查找不成功。
 
 * 为确定记录在查找表中的位置，需和给定值进行比较的关键字个数的期望值称为查找算法在查找成功时的**平均查找长度**（Average Search Length）。
 
@@ -68,7 +68,7 @@ ADT StaticSearchTable
   
 * 顺序查找在等概率情况下，查找平均长度为（n+1）/2，查找不成功平均长度为（n+1）。
   
-* 有序表的查找：**折半查找**（Binary Search）的查找过程是：先确定待查记录所在的范围（区间），然后逐步缩小范围直到找到或找不到该记录为止。
+* 有序表的查找：[**折半查找**](https://github.com/fantasia85/data-structure/blob/master/seventh_search/search/StaticSearchTable/search_bin.cpp)（Binary Search）的查找过程是：先确定待查记录所在的范围（区间），然后逐步缩小范围直到找到或找不到该记录为止。
   
 * 折半查找的过程可用二叉树来描述。树中的每个结点表示表中一个记录，结点中的值为该记录在表中的位置，通常称这个描述查找过程的二叉树为判定树。和给定值进行比较的关键字个数为该路径上的结点树或结点在判定树上的层次数。
   
