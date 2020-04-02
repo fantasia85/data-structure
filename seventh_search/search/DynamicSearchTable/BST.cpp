@@ -17,6 +17,12 @@ bool SearchBST(BiST *T, int key, BiST *f, BiST *&p);
 bool InsertBST(BiST *&T, int e);
 //当二叉排序树T中不存在关键字等于e.key的数据元素时，插入e并返回true，否则返回false
 
+bool DeleteBST(BiST *&T, int e);
+//若二叉排序树T中存在关键字等于key的数据元素时，则删除该数据元素结点，并返回true，否则返回false
+
+bool Delete(BiST *&p);
+//从二叉排序树中删除结点p，并重接它的左或右子树
+
 int main()
 {
     BiST *root = NULL;
@@ -42,8 +48,17 @@ int main()
     {
         std::cout << "Not found" << std::endl;
     }
-    
+    std::cout << std::endl;
 
+    int deletenum;
+    std::cout << "Num to delete: ";
+    std::cin >> deletenum;
+    bool dlt = DeleteBST(root, deletenum);
+    if (dlt)
+        std::cout << "Delete " << deletenum << std::endl;
+    else
+        std::cout << "Not found " << deletenum << std::endl;
+    
     system ("pause");
     return 0;
 }
@@ -87,4 +102,55 @@ bool InsertBST(BiST *&T, int e)
         return true;
     }
     return false;
+}
+
+bool DeleteBST(BiST *&T, int e)
+{
+    if (!T)
+        return false;  //不存在关键字等于e的数据元素
+    else
+    {
+        if (T->val == e)  //找到关键字等于e的数据元素
+            return Delete(T);
+        else if (T->val > e)
+            return DeleteBST(T->left, e);
+        else
+        {
+            return DeleteBST(T->right, e);
+        }
+    }
+}
+
+bool Delete(BiST *&p)
+{
+    if (!p->right) //右子树为空，只需要重接它的左子树
+    {
+        BiST *q = p;
+        p = p->left;
+        delete q;
+    }
+    else if (!p->left) //左子树为空，只需要重接它的右子树
+    {
+        BiST *q = p;
+        p = p->right;
+        delete q;
+    }
+    else   //左右子树均不为空
+    {
+        BiST *q = p, *s = p->left;
+        while (s->right)
+        {
+            q = s;
+            s = s->right;
+        }   //向左走，然后向右到尽头。s结点此时为p结点的直接前驱
+        p->val = s->val;   
+        if (q != p)
+            q->right = s->left; //当直接前驱不为p的左孩子时，重接*q的右子树
+        else
+        {
+            q->left = s->left; //当直接前驱为p的左孩子时，重接*q的左子树
+        }
+        delete s;
+    }   
+    return true;
 }
