@@ -101,7 +101,7 @@ ADT DynamicSearchTable
 }ADT DynamicSearchTable
 ```
 
-* **二叉排序树**（Binary Sort Tree）或者是一棵空树；或者是具有下列性质的二叉树：
+* [**二叉排序树**](https://github.com/fantasia85/data-structure/blob/master/seventh_search/search/DynamicSearchTable/BST.cpp)（Binary Sort Tree）或者是一棵空树；或者是具有下列性质的二叉树：
   * 若它的左子树不空，则左子树上**所有**结点的值**均小于**它的根结点的值；
   * 若它的右子树不空，则右子树上**所有**结点的值**均大于**它的根结点的值；
   * 它的左、右子树也分别为二叉排序树。
