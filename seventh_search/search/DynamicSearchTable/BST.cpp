@@ -1,6 +1,7 @@
 //二叉排序树（Binary Search Tree）的插入和删除操作
 
 #include <iostream>
+#include <stack>  //用于输出当前二叉排序树上现有的值
 
 struct BiST
 {
@@ -58,7 +59,34 @@ int main()
         std::cout << "Delete " << deletenum << std::endl;
     else
         std::cout << "Not found " << deletenum << std::endl;
-    
+
+    std::cout << "The num in Binary Search Tree: ";
+    std::stack<BiST *> st1;
+    if (!root)
+        std::cout << "No num!";
+    else
+    {
+        st1.push(root);
+        while (!st1.empty())
+        {
+            BiST *node = st1.top();
+            while (node)
+            {
+                st1.push(node->left);
+                node = node->left;
+            }
+            st1.pop();
+            if (!st1.empty())
+            {
+                node = st1.top();
+                std::cout << node->val << " ";
+                st1.pop();
+                st1.push(node->right);
+            }
+        }
+        std::cout << std::endl;
+    }
+
     system ("pause");
     return 0;
 }
