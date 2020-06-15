@@ -28,7 +28,7 @@ int main()
         std::cout << L[i] << " ";
     std::cout << std::endl;
 
-    system ("pause");
+    //system ("pause");
     return 0;
 }
 

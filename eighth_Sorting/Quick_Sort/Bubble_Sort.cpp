@@ -25,7 +25,7 @@ int main()
         std::cout << BS[i] << " ";
     std::cout << std::endl;
 
-    system ("pause");
+    //system ("pause");
     return 0;
 }
 
